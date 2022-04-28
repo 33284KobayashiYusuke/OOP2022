@@ -22,9 +22,7 @@ namespace SalesCalculator {
                     dict[sale.ProductCategory] += sale.Amount;
                 else
                     dict[sale.ProductCategory] = sale.Amount;
-            }
-
-
+            }    
             return dict;
         }
     }
