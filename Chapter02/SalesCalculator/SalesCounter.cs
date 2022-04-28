@@ -11,8 +11,8 @@ namespace SalesCalculator {
 
 
         //コンストラクタ
-        public SalesCounter(List<Sale> sales) {
-            _sales = sales;
+        public SalesCounter(string filePath) {
+            _sales = ReadSales(filePath);
         }
 
         //店舗売り上げを求める
