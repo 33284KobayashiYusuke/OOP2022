@@ -16,13 +16,13 @@ namespace SalesCalculator {
         }
 
         //店舗売り上げを求める
-        public Dictionary<string, int> GetPerStoreSales() {
+        public IDictionary<string, int> GetPerStoreSales() {
             Dictionary<string, int> dict = new Dictionary<string, int>();
             foreach (Sale sale in _sales) {
-                if (dict.ContainsKey(sale.ProductCategory))
-                    dict[sale.ProductCategory] += sale.Amount;
+                if (dict.ContainsKey(sale.ShopName))
+                    dict[sale.ShopName] += sale.Amount;
                 else
-                    dict[sale.ProductCategory] = sale.Amount;
+                    dict[sale.ShopName] = sale.Amount;
             }
             return dict;
         }
@@ -39,7 +39,7 @@ namespace SalesCalculator {
                 };
                 sales.Add(sale);
             }
-
+            
             return sales;
         }
     }
