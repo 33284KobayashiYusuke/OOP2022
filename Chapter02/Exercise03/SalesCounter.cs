@@ -14,9 +14,19 @@ namespace Exercise03 {
         public SalesCounter(string filePath) {
             _sales = ReadSales(filePath);
         }
-
         //店舗売り上げを求める
         public IDictionary<string, int> GetPerStoreSales() {
+            var dict = new Dictionary<string, int>();
+            foreach (var sale in _sales) {
+                if (dict.ContainsKey(sale.ShopName))
+                    dict[sale.ShopName] += sale.Amount;
+                else
+                    dict[sale.ShopName] = sale.Amount;
+            }
+            return dict;
+        }
+        //カテゴリー別の売り上げを求める
+        public IDictionary<string, int> GetCategorySales() {
             var dict =new Dictionary<string, int>();
             foreach (var sale in _sales) {
                 if (dict.ContainsKey(sale.ProductCategory))
