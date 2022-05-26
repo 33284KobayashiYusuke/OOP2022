@@ -27,17 +27,22 @@ namespace Exercise02 {
 
             // 4.2.5
             Exercise2_5(ymCollection);
+            Console.WriteLine("----");
 
             //4.2.6
             Exercise2_6(ymCollection);
-
+            Console.WriteLine("----");
 
         }
 
         private static void Exercise2_6(YearMonth[] ymCollection) {
-          foreach(var ym in ymCollection.OrderByDescending(ym => ym.Year)){
+        //①月で昇順に出力　②偶数年のみ昇順に出力 ③閏年のみを出力　④すべての年から12月に一番近い月を出力
+            foreach (var ym in ymCollection.Where(ym => DateTime.IsLeapYear(ym.Year))){
                 Console.WriteLine(ym);
             }
+       
+            var date = ymCollection.Max(ym=>ym.Month);
+            Console.WriteLine(date);
         }
 
         // 4.2.3
