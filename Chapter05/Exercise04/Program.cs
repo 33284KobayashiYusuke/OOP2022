@@ -17,7 +17,7 @@ namespace Exercise04 {
             
         }
 
-        static string ToJapanese(string key) {
+        static string ToJapanese(string key) {　
             switch (key) {
                 case "Novelist":
                     return "作家　";
