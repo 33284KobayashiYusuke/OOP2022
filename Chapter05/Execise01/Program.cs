@@ -17,7 +17,8 @@ namespace Exercise01 {
 
             if (inputString1.ToUpper() == inputString2.ToUpper()) {
                 Console.WriteLine("一致しています");
-            } else {
+            }
+            else {
                 Console.WriteLine("一致していません");
             }
         }
