@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Execise01 {
+namespace Exercise01 {
     class Program {
         static void Main(string[] args) {
            
@@ -38,17 +38,21 @@ namespace Execise01 {
 
         private static void Exercise1_3(int[] numbers) {
             foreach (var str in numbers) {
-               
                 Console.WriteLine(str.ToString());
             }
         }
 
         private static void Exercise1_4(int[] numbers) {
-
+            numbers = numbers.OrderBy(c => c).ToArray();
+            foreach(var min in numbers.Take(3)) {
+                Console.WriteLine(min);
+            }
         }
 
         private static void Exercise1_5(int[] numbers) {
+            var numDistinct = numbers.Distinct().Count(n => n > 10);
+            Console.WriteLine(numDistinct);
+            
         }
     }
-    
 }
