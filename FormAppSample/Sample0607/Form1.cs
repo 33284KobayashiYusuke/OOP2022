@@ -10,21 +10,24 @@ using System.Windows.Forms;
 
 namespace Sample0607 {
     public partial class Form1 : Form {
+        Random rand = new Random();
         public Form1() {
             InitializeComponent();
         }
+        //ボタンクリックイベントハンドラ
+        private void btRamdom_Click(object sender, EventArgs e) {
+            
+            Number.Value = rand.Next(minValue:(int)nudMin.Value,maxValue:(int)nudMax.Value+1);
 
-        private void button1_Click(object sender, EventArgs e) {
-            if (int.Parse(nudNum2.Text)!= 0) {
-                nudAns.Text = (int.Parse(nudNum1.Text) / int.Parse(nudNum2.Text)).ToString();
-                nudMod.Text = (int.Parse(nudNum1.Text) % int.Parse(nudNum2.Text)).ToString();
-            }
-            else {
-                MessageBox.Show("0で割り算できません",
-                "エラー",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-            }
+            
+            
+        }
+        //イベントハンドラ（起動時に一度だけ実行）
+        private void Form1_Load(object sender, EventArgs e) {
+
+        }
+
+        private void nudMin_ValueChanged(object sender, EventArgs e) {
 
         }
     }
