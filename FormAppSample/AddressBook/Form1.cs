@@ -52,7 +52,16 @@ namespace AddressBook
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Hand);
             }
-           
+            //追加ボタンが押されたら削除を有効にする
+            if (dgvPersons != null) {
+                btDelete.Enabled = true;
+            }
+            else {
+                MessageBox.Show("",
+                "エラー",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Hand);
+            }
 
 
         }
@@ -154,6 +163,13 @@ namespace AddressBook
         private void btDelete_Click_1(object sender, EventArgs e) {
             int index = dgvPersons.CurrentRow.Index;
             dgvPersons.Rows.RemoveAt(index);
+            
         }
-    }
-}
+
+        private void Form1_Load(object sender, EventArgs e) {
+            btDelete.Enabled = false;//削除ボタンをマスク
+        
+            }
+        }
+ }
+
