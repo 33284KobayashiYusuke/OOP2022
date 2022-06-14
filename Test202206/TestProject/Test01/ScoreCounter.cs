@@ -26,7 +26,6 @@ namespace Test01 {
                 };
                 score.Add(scores);
             }
-
             return score;
 
         }
@@ -42,9 +41,7 @@ namespace Test01 {
                     dict[scores.Subject] = scores.Score;
             }
             return dict;
+
         }
-
-
     }
-    
 }
