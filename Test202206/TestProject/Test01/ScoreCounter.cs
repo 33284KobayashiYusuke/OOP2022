@@ -13,7 +13,7 @@ namespace Test01 {
         }
 
 
-        //メソッドの概要： 
+        //メソッドの概要： StudentScoreのデータを取り出し、点数を出力
         private static IEnumerable<Student> ReadScore(string filePath) {
             List<Student> score = new List<Student>();
             string[] lines = File.ReadAllLines(filePath);
@@ -31,7 +31,7 @@ namespace Test01 {
 
         }
 
-        //メソッドの概要： 
+        //メソッドの概要： 科目別の点数の取り出し
         public IDictionary<string, int> GetPerStudentScore() {
 
             var dict = new Dictionary<string, int>();
