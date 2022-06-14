@@ -44,7 +44,7 @@ namespace Test02 {
         //問題２　偶数の最大値を表示
         //　　　　出力結果【94】
         private static void Exercise02(List<int> numbers) {
-
+            Console.WriteLine(numbers.Max());
 
 
         }
