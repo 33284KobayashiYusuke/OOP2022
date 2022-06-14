@@ -62,8 +62,10 @@ namespace Test02 {
         //　　　　出力結果【12 14 20 40 35 31 17 48】
         private static void Exercise04(List<int> numbers) {
 
-
-
+           
+            foreach(var num in numbers.FindAll(s => 10 <= s && s<50)) {
+                Console.Write(num + " ");
+            }
         }
     }
 }
