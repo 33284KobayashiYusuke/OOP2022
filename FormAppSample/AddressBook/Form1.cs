@@ -132,7 +132,7 @@ namespace AddressBook
                 }
             }
         }
-
+       
         //グループのチェックボックスをオールクリア
         private void groupCheckBoxAllClear()
         {
@@ -146,7 +146,8 @@ namespace AddressBook
         //更新ボタンが押された時の処理
         private void btUpdate_Click(object sender, EventArgs e) {
 
-          
+            int index = dgvPersons.CurrentRow.Index;
+
             listPerson[dgvPersons.CurrentRow.Index].Name = tbName.Text;
             listPerson[dgvPersons.CurrentRow.Index].MailAddress = tbMailAddress.Text;
             listPerson[dgvPersons.CurrentRow.Index].Address = tbAddress.Text;
@@ -155,21 +156,31 @@ namespace AddressBook
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
 
             dgvPersons.Refresh(); //データグリッドビュー更新
+           
 
 
 
         }
-
+        //削除ボタンが押された時の処理
         private void btDelete_Click_1(object sender, EventArgs e) {
             int index = dgvPersons.CurrentRow.Index;
             dgvPersons.Rows.RemoveAt(index);
+
+            if (listPerson.Count() == 0) {
+                btUpdate.Enabled = false;
+                btDelete.Enabled = false;
+            }
             
         }
 
         private void Form1_Load(object sender, EventArgs e) {
             btDelete.Enabled = false;//削除ボタンをマスク
-        
+            btUpdate.Enabled = false;//更新ボタンをマスク        
             }
+
+        private void pbPicture_Click(object sender, EventArgs e) {
+
         }
+    }
  }
 

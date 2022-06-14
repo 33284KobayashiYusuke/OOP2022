@@ -107,6 +107,7 @@ namespace AddressBook
             // dgvPersons
             // 
             this.dgvPersons.AllowUserToAddRows = false;
+            this.dgvPersons.AllowUserToDeleteRows = false;
             this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersons.Location = new System.Drawing.Point(12, 285);
             this.dgvPersons.MultiSelect = false;
@@ -210,6 +211,7 @@ namespace AddressBook
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 5;
             this.pbPicture.TabStop = false;
+            this.pbPicture.Click += new System.EventHandler(this.pbPicture_Click);
             // 
             // btPictureOpen
             // 
@@ -260,7 +262,7 @@ namespace AddressBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 493);
+            this.ClientSize = new System.Drawing.Size(822, 537);
             this.Controls.Add(this.btPictureClear);
             this.Controls.Add(this.btPictureOpen);
             this.Controls.Add(this.pbPicture);
