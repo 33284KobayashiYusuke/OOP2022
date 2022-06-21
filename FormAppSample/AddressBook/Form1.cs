@@ -46,29 +46,34 @@ namespace AddressBook
                 MailAddress = tbMailAddress.Text,
                 Address = tbAddress.Text,
                 Company = cbCompany.Text,
+                Registration = dateTimePicker2.Value,
                 Picture = pbPicture.Image,
                 listGroup = GetCheckBoxGroup(),
             };
             listPerson.Add(newPerson);
             dgvPersons.Rows[dgvPersons.RowCount - 1].Selected = true;
+            #region MyRegion
 
-            if (listPerson.Count() > 0)
-            {
+            if (listPerson.Count() > 0) {
                 btDelete.Enabled = true;
                 btUpdate.Enabled = true;
             }
-
+            #endregion
+            EnabledCheck();
             setCbCompany(cbCompany.Text);
         }
 
         //コンボボックスに会社名を登録する（重複なし）
         private void setCbCompany(string company)
         {   
+            
             if (!cbCompany.Items.Contains(company))
             {
                 //まだ登録されていなければ登録処理
                 cbCompany.Items.Add(company);
+                
             }
+           
         }
 
         //チェックボックスにセットされている値をリストとして取り出す
@@ -112,6 +117,10 @@ namespace AddressBook
             cbCompany.Text = listPerson[index].Company;
             pbPicture.Image = listPerson[index].Picture;
 
+            dateTimePicker2.Value = 
+                listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today;
+
+
             groupCheckBoxAllClear();    //グループチェックボックスを一旦初期化
 
             foreach (var group in listPerson[index].listGroup)
@@ -149,6 +158,7 @@ namespace AddressBook
             listPerson[dgvPersons.CurrentRow.Index].MailAddress = tbMailAddress.Text;
             listPerson[dgvPersons.CurrentRow.Index].Address = tbAddress.Text;
             listPerson[dgvPersons.CurrentRow.Index].Company = cbCompany.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Registration = dateTimePicker2.Value;
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
             listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
             dgvPersons.Refresh(); //データグリッドビュー更新
@@ -196,6 +206,7 @@ namespace AddressBook
 
         private void btOpen_Click(object sender, EventArgs e)
         {
+           
             if (ofdFileOpenDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -216,16 +227,20 @@ namespace AddressBook
                 {
                     MessageBox.Show(ex.Message);
                 }
+                cbCompany.Items.Clear();
                 //コンボボックスへ登録
-                foreach(var item in listPerson.Select(n => n.Company)) {
+                foreach (var item in listPerson.Select(n => n.Company)) {
                     setCbCompany(item);//存在する会社を登録
+                    
                 }
                 EnabledCheck();//マスク処理呼び出し
             }
         }
 
-        private void dgvPersons_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+        
 
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) {
+            
         }
     }
 }

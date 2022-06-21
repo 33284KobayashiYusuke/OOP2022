@@ -46,13 +46,15 @@ namespace AddressBook
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.btPictureOpen = new System.Windows.Forms.Button();
             this.btPictureClear = new System.Windows.Forms.Button();
-            this.ofdFileOpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.btUpdate = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
             this.cbCompany = new System.Windows.Forms.ComboBox();
             this.btOpen = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
+            this.ofdFileOpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.sfdSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.登録日 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +122,6 @@ namespace AddressBook
             this.dgvPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersons.Size = new System.Drawing.Size(626, 196);
             this.dgvPersons.TabIndex = 1;
-            this.dgvPersons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersons_CellContentClick);
             this.dgvPersons.Click += new System.EventHandler(this.dgvPersons_Click);
             // 
             // tbName
@@ -229,10 +230,6 @@ namespace AddressBook
             this.btPictureClear.UseVisualStyleBackColor = true;
             this.btPictureClear.Click += new System.EventHandler(this.btPictureClear_Click);
             // 
-            // ofdFileOpenDialog
-            // 
-            this.ofdFileOpenDialog.FileName = "openFileDialog1";
-            // 
             // btUpdate
             // 
             this.btUpdate.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -286,11 +283,34 @@ namespace AddressBook
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
+            // ofdFileOpenDialog
+            // 
+            this.ofdFileOpenDialog.FileName = "openFileDialog1";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(556, 503);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 19);
+            this.dateTimePicker2.TabIndex = 9;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // 登録日
+            // 
+            this.登録日.AutoSize = true;
+            this.登録日.Location = new System.Drawing.Point(509, 508);
+            this.登録日.Name = "登録日";
+            this.登録日.Size = new System.Drawing.Size(41, 12);
+            this.登録日.TabIndex = 10;
+            this.登録日.Text = "登録日";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 493);
+            this.ClientSize = new System.Drawing.Size(768, 539);
+            this.Controls.Add(this.登録日);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.cbCompany);
             this.Controls.Add(this.btPictureClear);
             this.Controls.Add(this.btPictureOpen);
@@ -342,13 +362,15 @@ namespace AddressBook
         private System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.Button btPictureOpen;
         private System.Windows.Forms.Button btPictureClear;
-        private System.Windows.Forms.OpenFileDialog ofdFileOpenDialog;
         private System.Windows.Forms.Button btUpdate;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.ComboBox cbCompany;
         private System.Windows.Forms.Button btOpen;
         private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.OpenFileDialog ofdFileOpenDialog;
         private System.Windows.Forms.SaveFileDialog sfdSaveDialog;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label 登録日;
     }
 }
 
