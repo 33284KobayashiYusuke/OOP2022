@@ -55,6 +55,10 @@ namespace AddressBook
             this.sfdSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.登録日 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbTellNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -114,13 +118,13 @@ namespace AddressBook
             this.dgvPersons.AllowUserToAddRows = false;
             this.dgvPersons.AllowUserToDeleteRows = false;
             this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersons.Location = new System.Drawing.Point(94, 285);
+            this.dgvPersons.Location = new System.Drawing.Point(94, 361);
             this.dgvPersons.MultiSelect = false;
             this.dgvPersons.Name = "dgvPersons";
             this.dgvPersons.ReadOnly = true;
             this.dgvPersons.RowTemplate.Height = 21;
             this.dgvPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPersons.Size = new System.Drawing.Size(626, 196);
+            this.dgvPersons.Size = new System.Drawing.Size(626, 120);
             this.dgvPersons.TabIndex = 1;
             this.dgvPersons.Click += new System.EventHandler(this.dgvPersons_Click);
             // 
@@ -304,11 +308,55 @@ namespace AddressBook
             this.登録日.TabIndex = 10;
             this.登録日.Text = "登録日";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(211, 294);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.Text = "自宅";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(211, 325);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(47, 16);
+            this.radioButton2.TabIndex = 12;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "携帯";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label6.Location = new System.Drawing.Point(61, 294);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 27);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "電話番号";
+            // 
+            // tbTellNumber
+            // 
+            this.tbTellNumber.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTellNumber.Location = new System.Drawing.Point(287, 294);
+            this.tbTellNumber.Name = "tbTellNumber";
+            this.tbTellNumber.Size = new System.Drawing.Size(362, 31);
+            this.tbTellNumber.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 539);
+            this.ClientSize = new System.Drawing.Size(768, 597);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.登録日);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.cbCompany);
@@ -325,9 +373,11 @@ namespace AddressBook
             this.Controls.Add(this.cbFriend);
             this.Controls.Add(this.cbFamily);
             this.Controls.Add(this.tbAddress);
+            this.Controls.Add(this.tbTellNumber);
             this.Controls.Add(this.tbMailAddress);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.dgvPersons);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -371,6 +421,10 @@ namespace AddressBook
         private System.Windows.Forms.SaveFileDialog sfdSaveDialog;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label 登録日;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbTellNumber;
     }
 }
 

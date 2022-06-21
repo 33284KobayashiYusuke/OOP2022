@@ -48,6 +48,7 @@ namespace AddressBook
                 Company = cbCompany.Text,
                 Registration = dateTimePicker2.Value,
                 Picture = pbPicture.Image,
+                Tellnumber = tbTellNumber.Text,
                 listGroup = GetCheckBoxGroup(),
             };
             listPerson.Add(newPerson);
@@ -116,6 +117,7 @@ namespace AddressBook
             tbAddress.Text = listPerson[index].Address;
             cbCompany.Text = listPerson[index].Company;
             pbPicture.Image = listPerson[index].Picture;
+            tbTellNumber.Text = listPerson[index].Tellnumber;
 
             dateTimePicker2.Value = 
                 listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today;
@@ -161,6 +163,7 @@ namespace AddressBook
             listPerson[dgvPersons.CurrentRow.Index].Registration = dateTimePicker2.Value;
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
             listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
+            listPerson[dgvPersons.CurrentRow.Index].Tellnumber = tbTellNumber.Text;
             dgvPersons.Refresh(); //データグリッドビュー更新
         }
         //削除ボタンが押された時の処理
@@ -178,7 +181,9 @@ namespace AddressBook
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            EnabledCheck();
+            EnabledCheck();//マスク処理呼び出し
+
+            
         }
 
         //保存ボタンのイベントハンドラ
@@ -241,6 +246,19 @@ namespace AddressBook
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e) {
             
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e) {
+            if(radioButton1.Checked == true) {
+               radioButton2.Checked = false;
+            }
+          
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e) {
+            if (radioButton2.Checked == true) {
+                radioButton1.Checked = false;
+            }
         }
     }
 }
