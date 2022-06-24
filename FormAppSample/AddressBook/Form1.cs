@@ -120,8 +120,7 @@ namespace AddressBook
         }
 
         //データグリッドビューをクリックした時のイベントハンドラ
-        private void dgvPersons_Click(object sender, EventArgs e)
-        {
+        private void dgvPersons_Click(object sender, EventArgs e) {
             if (dgvPersons.CurrentRow == null) return;
 
             int index = dgvPersons.CurrentRow.Index;
@@ -133,16 +132,35 @@ namespace AddressBook
             pbPicture.Image = listPerson[index].Picture;
             tbTellNumber.Text = listPerson[index].Tellnumber;
 
-            dateTimePicker2.Value = 
+            dateTimePicker2.Value =
                 listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today;
 
 
             groupCheckBoxAllClear();    //グループチェックボックスを一旦初期化
 
-            foreach (var group in listPerson[index].listGroup)
-            {
-                switch (group)
-                {
+            setGroupType(index);//グループを設定
+            setKindNumberType(index);//番号種別を設定
+
+        }
+
+        private void setKindNumberType(int index) {
+            switch (listPerson[index].KindNumber) {
+                case Person.KindNumberType.自宅:
+                    radioButton1.Checked = true;
+                    break;
+                case Person.KindNumberType.携帯:
+                    radioButton2.Checked = true;
+                    break;
+                case Person.KindNumberType.その他:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void setGroupType(int index) {
+            foreach (var group in listPerson[index].listGroup) {
+                switch (group) {
                     case Person.GroupType.家族:
                         cbFamily.Checked = true;
                         break;
@@ -159,19 +177,6 @@ namespace AddressBook
                         break;
                 }
             }
-            //番号種別チェック処理
-            switch (listPerson[index].KindNumber) {
-                case Person.KindNumberType.自宅: radioButton1.Checked = true;
-                    break;
-                case Person.KindNumberType.携帯: radioButton2.Checked = true;
-                    break;
-                case Person.KindNumberType.その他:
-                    break;
-                default:
-                    break;
-            }
-           
-           
         }
 
         //グループのチェックボックスをオールクリア
