@@ -347,7 +347,7 @@ namespace AddressBook
             // tbTellNumber
             // 
             this.tbTellNumber.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbTellNumber.Location = new System.Drawing.Point(287, 294);
+            this.tbTellNumber.Location = new System.Drawing.Point(273, 294);
             this.tbTellNumber.Name = "tbTellNumber";
             this.tbTellNumber.Size = new System.Drawing.Size(362, 31);
             this.tbTellNumber.TabIndex = 2;

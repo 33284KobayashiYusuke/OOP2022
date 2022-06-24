@@ -57,7 +57,7 @@ namespace AddressBook
            
            //if (listPerson.Count() > 0) {
            //    btDelete.Enabled = true;
-           //  btUpdate.Enabled = true;
+           //  　btUpdate.Enabled = true;
            // }
         
             EnabledCheck();
@@ -65,14 +65,17 @@ namespace AddressBook
         }
 
         private Person.KindNumberType GetRadioButtonKindNumber() {
+
+            var selectedKindNumber = Person.KindNumberType.その他;
             if (radioButton1.Checked) {//自宅にチェックがついている
-                return Person.KindNumberType.自宅;
+                selectedKindNumber = Person.KindNumberType.自宅;
                 
             }else if (radioButton2.Checked) {//携帯にチェックがついている
-                return Person.KindNumberType.携帯;
+               selectedKindNumber = Person.KindNumberType.携帯;
                
             }
-            return Person.KindNumberType.自宅;
+            return selectedKindNumber;
+           
         }
 
         //コンボボックスに会社名を登録する（重複なし）
@@ -156,6 +159,19 @@ namespace AddressBook
                         break;
                 }
             }
+            //番号種別チェック処理
+            switch (listPerson[index].KindNumber) {
+                case Person.KindNumberType.自宅: radioButton1.Checked = true;
+                    break;
+                case Person.KindNumberType.携帯: radioButton2.Checked = true;
+                    break;
+                case Person.KindNumberType.その他:
+                    break;
+                default:
+                    break;
+            }
+           
+           
         }
 
         //グループのチェックボックスをオールクリア
@@ -175,6 +191,7 @@ namespace AddressBook
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
             listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
             listPerson[dgvPersons.CurrentRow.Index].Tellnumber = tbTellNumber.Text;
+            listPerson[dgvPersons.CurrentRow.Index].KindNumber = GetRadioButtonKindNumber();
             dgvPersons.Refresh(); //データグリッドビュー更新
         }
         //削除ボタンが押された時の処理
@@ -194,7 +211,6 @@ namespace AddressBook
         {
             EnabledCheck();//マスク処理呼び出し
 
-            
         }
 
         //保存ボタンのイベントハンドラ
@@ -261,11 +277,11 @@ namespace AddressBook
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e) {
            
-          
         }
+           
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e) {
-            
+           
         }
     }
 }
