@@ -48,20 +48,31 @@ namespace AddressBook
                 Company = cbCompany.Text,
                 Registration = dateTimePicker2.Value,
                 Picture = pbPicture.Image,
+                KindNumber = GetRadioButtonKindNumber(),
                 Tellnumber = tbTellNumber.Text,
                 listGroup = GetCheckBoxGroup(),
             };
             listPerson.Add(newPerson);
             dgvPersons.Rows[dgvPersons.RowCount - 1].Selected = true;
-            #region MyRegion
-
-            if (listPerson.Count() > 0) {
-                btDelete.Enabled = true;
-                btUpdate.Enabled = true;
-            }
-            #endregion
+           
+           //if (listPerson.Count() > 0) {
+           //    btDelete.Enabled = true;
+           //  btUpdate.Enabled = true;
+           // }
+        
             EnabledCheck();
             setCbCompany(cbCompany.Text);
+        }
+
+        private Person.KindNumberType GetRadioButtonKindNumber() {
+            if (radioButton1.Checked) {//自宅にチェックがついている
+                return Person.KindNumberType.自宅;
+                
+            }else if (radioButton2.Checked) {//携帯にチェックがついている
+                return Person.KindNumberType.携帯;
+               
+            }
+            return Person.KindNumberType.自宅;
         }
 
         //コンボボックスに会社名を登録する（重複なし）
@@ -249,16 +260,12 @@ namespace AddressBook
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e) {
-            if(radioButton1.Checked == true) {
-               radioButton2.Checked = false;
-            }
+           
           
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e) {
-            if (radioButton2.Checked == true) {
-                radioButton1.Checked = false;
-            }
+            
         }
     }
 }
