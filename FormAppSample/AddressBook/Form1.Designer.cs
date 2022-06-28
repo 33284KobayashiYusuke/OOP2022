@@ -215,6 +215,7 @@ namespace AddressBook
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 5;
             this.pbPicture.TabStop = false;
+            this.pbPicture.Click += new System.EventHandler(this.pbPicture_Click);
             // 
             // btPictureOpen
             // 

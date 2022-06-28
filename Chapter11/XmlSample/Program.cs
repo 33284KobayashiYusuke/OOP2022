@@ -16,11 +16,12 @@ namespace XmlSample {
                 var stream = wc.OpenRead("https://news.yahoo.co.jp/rss/media/biz_lifeh/all.xml");
 
                 var xdoc = XDocument.Load(stream);
-                var xNews = xdoc.Root.Descendants("item").Select(x=>x.Element("title"));
+              
+                var xTitle = xdoc.Root.Descendants("item").Select(x=>x.Element("title"));
 
 
-                foreach (var xnovelist in xNews) {
-                    Console.WriteLine(xnovelist);
+                foreach (var data in xTitle) {
+                    Console.WriteLine(data);
                 }
                 wc.Dispose();
             }
