@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSample", "Chapter11\XmlS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssReader", "Chapter11\RssReader\RssReader.csproj", "{6ABD52DC-B99D-4577-9FB2-547F02FBA922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exersice1", "Chapter11\Exersice1\Exersice1.csproj", "{62B97799-B3CA-4608-9DC6-D917D2D2DB3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,10 @@ Global
 		{6ABD52DC-B99D-4577-9FB2-547F02FBA922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ABD52DC-B99D-4577-9FB2-547F02FBA922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ABD52DC-B99D-4577-9FB2-547F02FBA922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62B97799-B3CA-4608-9DC6-D917D2D2DB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62B97799-B3CA-4608-9DC6-D917D2D2DB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62B97799-B3CA-4608-9DC6-D917D2D2DB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62B97799-B3CA-4608-9DC6-D917D2D2DB3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -205,6 +211,7 @@ Global
 		{E461C0A8-8900-485C-B520-E929BA33F712} = {0C5E2FC9-AC72-42C8-9927-07F78BA1192A}
 		{01C2B9D3-6E78-4A52-8720-B65582B7836B} = {D359F6DF-CFBB-4926-8D9F-393585BDE34E}
 		{6ABD52DC-B99D-4577-9FB2-547F02FBA922} = {D359F6DF-CFBB-4926-8D9F-393585BDE34E}
+		{62B97799-B3CA-4608-9DC6-D917D2D2DB3F} = {D359F6DF-CFBB-4926-8D9F-393585BDE34E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1EA921C-810E-4716-A75C-C7E515900697}

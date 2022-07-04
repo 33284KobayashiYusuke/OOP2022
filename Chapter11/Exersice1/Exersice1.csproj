@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{01C2B9D3-6E78-4A52-8720-B65582B7836B}</ProjectGuid>
+    <ProjectGuid>{62B97799-B3CA-4608-9DC6-D917D2D2DB3F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>XmlSample</RootNamespace>
-    <AssemblyName>XmlSample</AssemblyName>
+    <RootNamespace>Exersice1</RootNamespace>
+    <AssemblyName>Exersice1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,7 +54,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="novelists.xml">
+    <Content Include="Sample.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
