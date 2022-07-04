@@ -29,7 +29,7 @@ namespace NumberGame {
 
         private void Form1_Load(object sender, EventArgs e) {
             //乱数取得
-            var randomNumber = rand.Next(Number.Value);
+        //    var randomNumber = rand.Next(Number.Value);
         }
 
         private void message_TextChanged(object sender, EventArgs e) {
