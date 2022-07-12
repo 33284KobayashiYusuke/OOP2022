@@ -131,8 +131,6 @@ namespace Exercise01 {
                 });
                 serializer.WriteObject(stream, emps);
             }
-
-
         }
     }
 }
