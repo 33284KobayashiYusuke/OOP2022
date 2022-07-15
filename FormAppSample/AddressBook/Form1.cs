@@ -292,5 +292,9 @@ namespace AddressBook
         private void pbPicture_Click(object sender, EventArgs e) {
 
         }
+
+        private void dgvPersons_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+        }
     }
 }

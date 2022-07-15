@@ -152,7 +152,7 @@ namespace AddressBook
             this.tbAddress.Location = new System.Drawing.Point(178, 107);
             this.tbAddress.Multiline = true;
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(362, 61);
+            this.tbAddress.Size = new System.Drawing.Size(362, 62);
             this.tbAddress.TabIndex = 2;
             // 
             // cbFamily
