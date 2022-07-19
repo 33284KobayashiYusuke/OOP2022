@@ -143,7 +143,6 @@ namespace CarReportSystem {
                 try {
                     //バイナリ形式でシリアル化
                     var bf = new BinaryFormatter();
-
                     using (FileStream fs = File.Open(sfdSaveDialog.FileName, FileMode.Create)) {
                         bf.Serialize(fs, listPerson);
                     }
@@ -167,15 +166,7 @@ namespace CarReportSystem {
         private void btEnd_Click(object sender, EventArgs e) {
             Application.Exit();
         }
-        private void Form1_Load(object outfile, EventArgs e) {
-            using (var reader = XmlReader.Create(outfile.ToString())) {
-                var serializer = new XmlSerializer(typeof(Settings));
-                var employee = serializer.Deserialize(reader) as Settings;
-
-                EnabledCheck();
-            }
-        }
-
+        
         private void Form1_FormClosed(object outfile, FormClosedEventArgs e) {          
             using (var writer = XmlWriter.Create(settings.ToString())) {
                 var serializer = new XmlSerializer(settings.GetType());
@@ -183,16 +174,20 @@ namespace CarReportSystem {
             }
         }
 
-        private void ファイルToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void Form1_Load(object outfile, EventArgs e) {
+            using (var reader = XmlReader.Create(Settings.)) {
+                var serializer = new XmlSerializer(typeof(Settings));
+                var employee = serializer.Deserialize(reader) as Settings;
 
+                EnabledCheck();
+            }
         }
 
         private void 色設定ToolStripMenuItem_Click(object sender, EventArgs e) {
             if (cdColorDialog.ShowDialog() == DialogResult.OK) {
                 this.BackColor = cdColorDialog.Color;
             }
-        }
-    
+        }    
     }
 }
 

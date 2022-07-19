@@ -347,7 +347,6 @@ namespace CarReportSystem {
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.ファイルToolStripMenuItem.Text = "ファイル(&F)";
-            this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
             // 開くToolStripMenuItem
             // 
