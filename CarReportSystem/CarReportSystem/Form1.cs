@@ -9,19 +9,20 @@ using System.Net.Mail;
 using System.Net;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-
-
+using System.Xml;
+using System.Xml.Serialization;
+using System.Windows.Media;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
         BindingList<CarReport> listPerson = new BindingList<CarReport>();
+        Settings settings = new Settings();
+        
         public Form1() {
             InitializeComponent();
             dgv_Parsons.DataSource = listPerson;
         }
-        private void Form1_Load(object sender, EventArgs e) {
-            EnabledCheck();
-        }
+
         private void btPictureOpen_Click(object sender, EventArgs e) {
             if (ofdFileOpenDialog.ShowDialog() == DialogResult.OK) {
                 pdPicture.Image = Image.FromFile(ofdFileOpenDialog.FileName);
@@ -166,6 +167,32 @@ namespace CarReportSystem {
         private void btEnd_Click(object sender, EventArgs e) {
             Application.Exit();
         }
+        private void Form1_Load(object outfile, EventArgs e) {
+            using (var reader = XmlReader.Create(outfile.ToString())) {
+                var serializer = new XmlSerializer(typeof(Settings));
+                var employee = serializer.Deserialize(reader) as Settings;
+
+                EnabledCheck();
+            }
+        }
+
+        private void Form1_FormClosed(object outfile, FormClosedEventArgs e) {          
+            using (var writer = XmlWriter.Create(settings.ToString())) {
+                var serializer = new XmlSerializer(settings.GetType());
+                serializer.Serialize(writer, settings);
+            }
+        }
+
+        private void ファイルToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void 色設定ToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (cdColorDialog.ShowDialog() == DialogResult.OK) {
+                this.BackColor = cdColorDialog.Color;
+            }
+        }
+    
     }
 }
 
