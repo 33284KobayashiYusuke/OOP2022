@@ -168,16 +168,17 @@ namespace CarReportSystem {
         }
         
         private void Form1_FormClosed(object outfile, FormClosedEventArgs e) {          
-            using (var writer = XmlWriter.Create(settings.ToString())) {
+            using (var writer = XmlWriter.Create("settings.xml")) {
                 var serializer = new XmlSerializer(settings.GetType());
                 serializer.Serialize(writer, settings);
             }
         }
 
         private void Form1_Load(object outfile, EventArgs e) {
-            using (var reader = XmlReader.Create(Settings.)) {
+            using (var reader = XmlReader.Create("settings.xml")) {
+
                 var serializer = new XmlSerializer(typeof(Settings));
-                var employee = serializer.Deserialize(reader) as Settings;
+                var settings = serializer.Deserialize(reader) as Settings;
 
                 EnabledCheck();
             }
@@ -186,6 +187,7 @@ namespace CarReportSystem {
         private void 色設定ToolStripMenuItem_Click(object sender, EventArgs e) {
             if (cdColorDialog.ShowDialog() == DialogResult.OK) {
                 this.BackColor = cdColorDialog.Color;
+                settings.MainFormColor = "ddddddd";
             }
         }    
     }
