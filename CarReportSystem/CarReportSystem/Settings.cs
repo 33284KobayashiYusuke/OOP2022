@@ -8,7 +8,14 @@ using System.Threading.Tasks;
 namespace CarReportSystem {
     //設定情報
     public class Settings {
-        public static object Color { get; internal set; }
-        Color MainFormColor { get; set; }  
+        private static Settings settings;
+       
+        public static Settings getInstance() {
+            if (settings == null) {
+                settings = new Settings();
+            }
+            return settings;
+        }
+        public int MainFormColor { get; set; }
     }
 }

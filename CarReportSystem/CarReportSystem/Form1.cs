@@ -12,11 +12,12 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Windows.Media;
+using Color = System.Drawing.Color;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
         BindingList<CarReport> listPerson = new BindingList<CarReport>();
-        Settings settings = new Settings();
+        Settings settings = Settings.getInstance();
         
         public Form1() {
             InitializeComponent();
@@ -175,19 +176,23 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load(object outfile, EventArgs e) {
-            using (var reader = XmlReader.Create("settings.xml")) {
+            EnabledCheck();//マスク処理呼び出し
+            try {
+                using (var reader = XmlReader.Create("settings.xml")) {
 
-                var serializer = new XmlSerializer(typeof(Settings));
-                var settings = serializer.Deserialize(reader) as Settings;
-
-                EnabledCheck();
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    var settings = serializer.Deserialize(reader) as Settings;
+                    BackColor = Color.FromArgb(settings.MainFormColor);
+                }
             }
-        }
+            catch (Exception) {
+            }
+        } 
 
         private void 色設定ToolStripMenuItem_Click(object sender, EventArgs e) {
             if (cdColorDialog.ShowDialog() == DialogResult.OK) {
                 this.BackColor = cdColorDialog.Color;
-                settings.MainFormColor = "ddddddd";
+                settings.MainFormColor = cdColorDialog.Color.ToArgb();
             }
         }    
     }
