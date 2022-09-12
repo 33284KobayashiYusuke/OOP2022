@@ -110,6 +110,10 @@ namespace AdressBook {
         private void btClear_Click(object sender, EventArgs e) {
 
         }
+
+        private void バージョン情報ToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
     }
 
 }
