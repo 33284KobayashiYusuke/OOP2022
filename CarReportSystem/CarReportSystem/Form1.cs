@@ -205,7 +205,10 @@ namespace CarReportSystem {
 
         }
 
-       
+        private void btConnect_Click(object sender, EventArgs e) {
+            this.carReportDBTableAdapter.Fill(this.infosys202226DataSet.CarReportDB);
+
+        }
     }
 }
 

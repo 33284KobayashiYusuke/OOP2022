@@ -74,8 +74,8 @@ namespace AdressBook {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.データベース接続ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.終了XAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.終了XAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.バージョン情報ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.addressTableBindingNavigator)).BeginInit();
@@ -508,19 +508,19 @@ namespace AdressBook {
             // データベース接続ToolStripMenuItem
             // 
             this.データベース接続ToolStripMenuItem.Name = "データベース接続ToolStripMenuItem";
-            this.データベース接続ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.データベース接続ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.データベース接続ToolStripMenuItem.Text = "データベース接続";
-            // 
-            // 終了XAltF4ToolStripMenuItem
-            // 
-            this.終了XAltF4ToolStripMenuItem.Name = "終了XAltF4ToolStripMenuItem";
-            this.終了XAltF4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.終了XAltF4ToolStripMenuItem.Text = "終了&(X)  Alt+F4";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
+            // 
+            // 終了XAltF4ToolStripMenuItem
+            // 
+            this.終了XAltF4ToolStripMenuItem.Name = "終了XAltF4ToolStripMenuItem";
+            this.終了XAltF4ToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.終了XAltF4ToolStripMenuItem.Text = "終了&(X)  Alt+F4";
             // 
             // ヘルプHToolStripMenuItem
             // 
@@ -533,7 +533,7 @@ namespace AdressBook {
             // バージョン情報ToolStripMenuItem
             // 
             this.バージョン情報ToolStripMenuItem.Name = "バージョン情報ToolStripMenuItem";
-            this.バージョン情報ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.バージョン情報ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.バージョン情報ToolStripMenuItem.Text = "バージョン情報";
             this.バージョン情報ToolStripMenuItem.Click += new System.EventHandler(this.バージョン情報ToolStripMenuItem_Click);
             // 
