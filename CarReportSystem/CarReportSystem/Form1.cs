@@ -176,6 +176,8 @@ namespace CarReportSystem {
         }
 
         private void Form1_Load(object outfile, EventArgs e) {
+            // TODO: このコード行はデータを 'infosys202226DataSet.CarReportDB' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
+            this.carReportDBTableAdapter.Fill(this.infosys202226DataSet.CarReportDB);
             EnabledCheck();//マスク処理呼び出し
             try {
                 using (var reader = XmlReader.Create("settings.xml")) {
@@ -194,7 +196,16 @@ namespace CarReportSystem {
                 this.BackColor = cdColorDialog.Color;
                 settings.MainFormColor = cdColorDialog.Color.ToArgb();
             }
-        }    
+        }
+
+        private void carReportDBBindingNavigatorSaveItem_Click(object sender, EventArgs e) {
+            this.Validate();
+            this.carReportDBBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202226DataSet);
+
+        }
+
+       
     }
 }
 
