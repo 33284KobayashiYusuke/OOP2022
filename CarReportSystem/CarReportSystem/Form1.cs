@@ -24,6 +24,7 @@ namespace CarReportSystem {
             dgv_Parsons.DataSource = listPerson;
         }
 
+
         private void btPictureOpen_Click(object sender, EventArgs e) {
             if (ofdFileOpenDialog.ShowDialog() == DialogResult.OK) {
                 pdPicture.Image = Image.FromFile(ofdFileOpenDialog.FileName);
@@ -75,22 +76,21 @@ namespace CarReportSystem {
         }
 
         private void btAdd_Click(object sender, EventArgs e) {
-            //氏名が未入力なら登録しない
-            if (String.IsNullOrWhiteSpace(cbName.Text)) {
-                MessageBox.Show("記録者名が入力されていません");
-                return;
-            }
-            CarReport newCarReport = new CarReport {
-                Auther = cbName.Text,
-                Report = tbReport.Text,
-                CarName = cbCarName.Text,
-                Picture = pdPicture.Image,
-                Date = dateTimePicker1.Value,
-                Maker = GetRadioGroup()
+            
+            
+            DataRow newRow = infosys202226DataSet.CarReportDB.NewRow();
+            newRow[1] = dateTimePicker1.Text;
+            newRow[2] = cbName.Text;
+            newRow[3] = GetRadioGroup();
+            newRow[4] = cbCarName.Text;
+            newRow[5] = tbReport.Text;
+            newRow[6] = pdPicture.Image;
+            //データセットへ新しいレコードを追加
+            infosys202226DataSet.CarReportDB.Rows.Add(newRow);
+            //データベース更新
+            this.carReportDBTableAdapter.Update(this.infosys202226DataSet.CarReportDB);
 
-            };
-            listPerson.Add(newCarReport);
-            dgv_Parsons.Rows[dgv_Parsons.RowCount - 1].Selected = true;
+            dgv_Parsons.Rows[dgv_Parsons.RowCount + 1].Selected = true;
             EnabledCheck();
         }
 
@@ -131,11 +131,11 @@ namespace CarReportSystem {
         }
 
         private void btDelete_Click(object sender, EventArgs e) {
-            listPerson.RemoveAt(dgv_Parsons.CurrentRow.Index);
+            carReportDBBindingSource.RemoveAt(carReportDBDataGridView.CurrentRow.Index);
             EnabledCheck();//マスク処理呼び出し
         }
         private void EnabledCheck() {
-            btCorrect.Enabled = btDelete.Enabled = listPerson.Count() > 0 ? true : false;
+           // btCorrect.Enabled = btDelete.Enabled = listPerson.Count() > 0 ? true : false;
 
         }
 
@@ -154,16 +154,7 @@ namespace CarReportSystem {
             }
         }
 
-        private void btCorrect_Click(object sender, EventArgs e) {
-            listPerson[dgv_Parsons.CurrentRow.Index].Date = dateTimePicker1.Value;
-            listPerson[dgv_Parsons.CurrentRow.Index].Auther = cbName.Text;
-            listPerson[dgv_Parsons.CurrentRow.Index].Maker = GetRadioGroup();
-            listPerson[dgv_Parsons.CurrentRow.Index].CarName = cbCarName.Text;
-            listPerson[dgv_Parsons.CurrentRow.Index].Report = tbReport.Text;
-            listPerson[dgv_Parsons.CurrentRow.Index].Picture = pdPicture.Image;
-            dgv_Parsons.Refresh(); //データグリッドビュー更新
-        }
-
+       
         private void btEnd_Click(object sender, EventArgs e) {
             Application.Exit();
         }
@@ -178,6 +169,7 @@ namespace CarReportSystem {
         private void Form1_Load(object outfile, EventArgs e) {
             // TODO: このコード行はデータを 'infosys202226DataSet.CarReportDB' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportDBTableAdapter.Fill(this.infosys202226DataSet.CarReportDB);
+           
             EnabledCheck();//マスク処理呼び出し
             try {
                 using (var reader = XmlReader.Create("settings.xml")) {
@@ -208,6 +200,33 @@ namespace CarReportSystem {
         private void btConnect_Click(object sender, EventArgs e) {
             this.carReportDBTableAdapter.Fill(this.infosys202226DataSet.CarReportDB);
 
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e) {
+            carReportDBDataGridView.CurrentRow.Cells[1].Value = dateTimePicker1.Text;
+            carReportDBDataGridView.CurrentRow.Cells[2].Value = cbName.Text;
+            carReportDBDataGridView.CurrentRow.Cells[3].Value = GetRadioGroup();
+            carReportDBDataGridView.CurrentRow.Cells[4].Value = cbCarName.Text;
+            carReportDBDataGridView.CurrentRow.Cells[5].Value = tbReport.Text;
+            carReportDBDataGridView.CurrentRow.Cells[6].Value = ImageToByteArray(pdPicture.Image);
+
+            //データセットの中をデータベースへ反映（保存）
+            this.Validate();
+            this.carReportDBBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.infosys202226DataSet);
+        }
+        // バイト配列をImageオブジェクトに変換
+        public static Image ByteArrayToImage(byte[] b) {
+            ImageConverter imgconv = new ImageConverter();
+            Image img = (Image)imgconv.ConvertFrom(b);
+            return img;
+        }
+
+        // Imageオブジェクトをバイト配列に変換
+        public static byte[] ImageToByteArray(Image img) {
+            ImageConverter imgconv = new ImageConverter();
+            byte[] b = (byte[])imgconv.ConvertTo(img, typeof(byte[]));
+            return b;
         }
     }
 }

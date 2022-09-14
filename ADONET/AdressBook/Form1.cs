@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using System.Collections.Generic;
 
 namespace AdressBook {
     public partial class Form1 : Form {
@@ -108,7 +109,7 @@ namespace AdressBook {
         }
 
         private void btClear_Click(object sender, EventArgs e) {
-
+            addressTableBindingSource.RemoveAt(addressTableDataGridView.CurrentRow.Index);
         }
 
         private void バージョン情報ToolStripMenuItem_Click(object sender, EventArgs e) {
