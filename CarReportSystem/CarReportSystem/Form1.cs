@@ -17,7 +17,7 @@ using CarReportSystem.Properties;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
-      
+        Settings settings = Settings.getInstance();
         public Form1() {
             InitializeComponent();
             
@@ -122,7 +122,7 @@ namespace CarReportSystem {
         private void 色設定ToolStripMenuItem_Click(object sender, EventArgs e) {
             if (cdColorDialog.ShowDialog() == DialogResult.OK) {
                 this.BackColor = cdColorDialog.Color;
-                Settings.settings.MainFormColor = cdColorDialog.Color.ToArgb();
+                settings.MainFormColor = cdColorDialog.Color.ToArgb();
             }
         }
 
