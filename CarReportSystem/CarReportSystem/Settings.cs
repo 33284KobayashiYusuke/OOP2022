@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CarReportSystem {
     //設定情報
     public class Settings {
-        private static Settings settings;
+        public static Settings settings;
        
         public static Settings getInstance() {
             if (settings == null) {
