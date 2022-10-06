@@ -26,11 +26,13 @@ namespace Chapter15 {
 
             IEnumerable<Book> books;
             if (sort == 1) {
+                //昇順
                 books = Library.Books
                     .Where(b => years.Contains(b.PublishedYear))
                     .OrderBy(b => b.PublishedYear);
             }
             else {
+                //降順
                 books = Library.Books
                     .Where(b => years.Contains(b.PublishedYear))
                     .OrderByDescending(b => b.PublishedYear);
@@ -42,19 +44,26 @@ namespace Chapter15 {
             }
 
             Console.WriteLine();
-            var groups = Library.Books
-                .Where(b => years.Contains(b.PublishedYear))
-                .GroupBy(b => b.PublishedYear)
-                .OrderBy(g => g.Key);
+            var selected = Library.Books
+              .OrderBy(b => b.CategoryId)
+              .ThenByDescending(b => b.PublishedYear)
+             // .Select(b => b.PublishedYear);
+              .Join(Library.Categories,    //結合する２番目のシーケンス
+                 book => book.CategoryId,　//対象シーケンスの結合キー
+                 category => category.Id,  //2番目のシーケンスの結合キー
+                 (book, category) => new {
+                     Title = book.Title,
+                     Category = category.Name,
+                     PublishedYear = book.PublishedYear
+                 }
+                 );
 
-            foreach (var g in groups) {
-                Console.WriteLine($"{g.Key}年");
-                foreach (var book in g) {
-                    var category = Library.Categories.Where(b => b.Id == book.CategoryId).First();
-                    Console.WriteLine($" タイトル:{book.Title},価格:{book.Price},カテゴリ:{category.Name}");
+            foreach (var book in selected) {
+                Console.WriteLine($"{book.PublishedYear}年");
+               // var category = Library.Categories.Where(b => b.Id == book.CategoryId).First();
+                Console.WriteLine($" タイトル:{book.Title},出版年:{book.PublishedYear},カテゴリ:{book.Category}");
 
-                }
-            }
+            }       
         }
     }
 }
