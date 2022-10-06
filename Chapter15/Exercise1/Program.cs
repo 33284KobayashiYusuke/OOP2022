@@ -82,7 +82,7 @@ namespace Exercise1 {
             //                    book => book.Key,
             //                    category => category.Id,
             //                    (book, category) => new {
-            //                        Title = book.Title,
+            //                        Title = book.Title
 
             //                    });
             //foreach (var books in group) {
