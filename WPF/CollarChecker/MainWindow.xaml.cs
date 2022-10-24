@@ -21,5 +21,6 @@ namespace CollarChecker {
         public MainWindow() {
             InitializeComponent();
         }
+        
     }
 }
