@@ -21,6 +21,12 @@ namespace CollarChecker {
         public MainWindow() {
             InitializeComponent();
         }
-        
+        private void CollarCheck() {
+            byte R = (byte)sl1.Value;
+            byte G = (byte)sl2.Value;
+            byte B = (byte)sl3.Value;
+            Color color = Color.FromRgb(R, G, B);
+        }
+        //private void  slider1_Value
     }
 }

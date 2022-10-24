@@ -39,9 +39,9 @@
 
         <Label Content="Label" Grid.Row="0" Grid.Column="0" Background="Aquamarine" Grid.RowSpan="5"/>
 
-        <TextBox Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="0" TextWrapping="Wrap" Text="{Binding ElementName=sl1, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
-        <TextBox Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding ElementName=sl2, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
-        <TextBox Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=sl3, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="Rtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="0" TextWrapping="Wrap" Text="{Binding ElementName=sl1, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="Gtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding ElementName=sl2, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="Btext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=sl3, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
     
     </Grid>
 </Window>
