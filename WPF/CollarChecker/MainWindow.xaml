@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CollarChecker"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="500">
-    
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -32,16 +32,17 @@
         <TextBlock Grid.Column="1"  Margin="10" Text="R"/>
         <TextBlock Grid.Column="1"  Margin="10" Grid.Row="1" Text="G"/>
         <TextBlock Grid.Column="1"  Margin="10" Grid.Row="2" Text="B"/>
-       
+
         <Slider  x:Name="sl1" Grid.Column="2"  Margin="10,10,28,10" Grid.Row="0" Grid.ColumnSpan="3" Minimum="0" Maximum="255" IsSnapToTickEnabled="True"/>
         <Slider  x:Name="sl2" Grid.Column="2"  Margin="10,10,28,10" Grid.Row="1" Grid.ColumnSpan="3" Minimum="0" Maximum="255" IsSnapToTickEnabled="True"/>
         <Slider  x:Name="sl3" Grid.Column="2"  Margin="10,10,28,10" Grid.Row="2" Grid.ColumnSpan="3" Minimum="0" Maximum="255" IsSnapToTickEnabled="True"/>
 
-        <Label Content="Label" Grid.Row="0" Grid.Column="0" Background="Aquamarine" Grid.RowSpan="5"/>
+        <Label x:Name="label1" Content="Label" Grid.Row="0" Grid.Column="0" Background="AliceBlue" Grid.RowSpan="5"/>
 
         <TextBox x:Name="Rtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="0" TextWrapping="Wrap" Text="{Binding ElementName=sl1, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
         <TextBox x:Name="Gtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding ElementName=sl2, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
         <TextBox x:Name="Btext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=sl3, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
-    
+        <ComboBox Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Left" Margin="10,13,0,0" Grid.Row="3" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
