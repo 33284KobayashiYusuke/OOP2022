@@ -23,9 +23,10 @@ namespace CollarChecker {
         public MainWindow() {
             InitializeComponent();
             DataContext = GetColorList(); //←追加
-
         }
-       
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+            ChangeCollar();
+        }
 
         private void ChangeCollar() {
             byte rr = (byte)sl1.Value;
@@ -35,30 +36,34 @@ namespace CollarChecker {
             Color color = Color.FromRgb(rr, gg, bb);
             SolidColorBrush colorBrush = new SolidColorBrush(color);
             label1.Background = colorBrush;
-
         }
-        
+
         private MyColor[] GetColorList() {
             return typeof(Colors).GetProperties(BindingFlags.Public | BindingFlags.Static)
                 .Select(i => new MyColor() { Color = (Color)i.GetValue(null), Name = i.Name }).ToArray();
         }
 
-
-        private void sl1_ValueChanged(object sender,RoutedPropertyChangedEventArgs<double> e) {
+        private void sl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
             ChangeCollar();
         }
-        private void sl2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
-            ChangeCollar();
-        }
-        private void sl3_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
-            ChangeCollar();
-        }
-    }
 
-   
+        public class MyColor {
+            public Color Color { get; set; }
+            public string Name { get; set; }
+        }
 
-    public class MyColor {
-        public Color Color { get; set; }
-        public string Name { get; set; }
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            var mycolor = (MyColor)((ComboBox)sender).SelectedItem;
+            //var color = mycolor.Color;
+            //var name = mycolor.Name;
+            sl1.Value = mycolor.Color.R;
+            sl2.Value = mycolor.Color.G;
+            sl3.Value = mycolor.Color.B;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            ChangeCollar();
+            label1.Background.Clone();
+        }
     }
 }
