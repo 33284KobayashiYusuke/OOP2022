@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace CollarChecker {
     /// <summary>
@@ -21,18 +22,27 @@ namespace CollarChecker {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
-
+            DataContext = GetColorList(); //←追加
 
         }
+       
 
         private void ChangeCollar() {
             byte rr = (byte)sl1.Value;
             byte gg = (byte)sl2.Value;
             byte bb = (byte)sl3.Value;
+
             Color color = Color.FromRgb(rr, gg, bb);
             SolidColorBrush colorBrush = new SolidColorBrush(color);
             label1.Background = colorBrush;
+
         }
+        
+        private MyColor[] GetColorList() {
+            return typeof(Colors).GetProperties(BindingFlags.Public | BindingFlags.Static)
+                .Select(i => new MyColor() { Color = (Color)i.GetValue(null), Name = i.Name }).ToArray();
+        }
+
 
         private void sl1_ValueChanged(object sender,RoutedPropertyChangedEventArgs<double> e) {
             ChangeCollar();
@@ -44,6 +54,9 @@ namespace CollarChecker {
             ChangeCollar();
         }
     }
+
+   
+
     public class MyColor {
         public Color Color { get; set; }
         public string Name { get; set; }
