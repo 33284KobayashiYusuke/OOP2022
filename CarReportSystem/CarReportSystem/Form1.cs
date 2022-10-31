@@ -57,20 +57,23 @@ namespace CarReportSystem {
         }
 
         private void btAdd_Click(object sender, EventArgs e) {
-            
-            
-            DataRow newRow = infosys202226DataSet.CarReportDB.NewRow();
-            newRow[1] = dateTimePicker1.Text;
-            newRow[2] = cbName.Text;
-            newRow[3] = GetRadioGroup();
-            newRow[4] = cbCarName.Text;
-            newRow[5] = tbReport.Text;
-            newRow[6] = pdPicture.Image;
-            //データセットへ新しいレコードを追加
-            infosys202226DataSet.CarReportDB.Rows.Add(newRow);
-            //データベース更新
-            this.carReportDBTableAdapter.Update(this.infosys202226DataSet.CarReportDB);
+            try { 
+                DataRow newRow = infosys202226DataSet.CarReportDB.NewRow();
+                newRow[1] = dateTimePicker1.Text;
+                newRow[2] = cbName.Text;
+                newRow[3] = GetRadioGroup();
+                newRow[4] = cbCarName.Text;
+                newRow[5] = tbReport.Text;
+                newRow[6] = pdPicture.Image;
+                //データセットへ新しいレコードを追加
+                infosys202226DataSet.CarReportDB.Rows.Add(newRow);
+                //データベース更新
+                this.carReportDBTableAdapter.Update(this.infosys202226DataSet.CarReportDB);
+            }
+            catch {
 
+            }
+        
           //carReportDBDataGridView.Rows[carReportDBDataGridView.RowCount + 1].Selected = true;
             EnabledCheck();
         }
@@ -82,7 +85,6 @@ namespace CarReportSystem {
             if (!cbName.Items.Contains(company)) {
                 //まだ登録されていなければ登録処理
                 cbName.Items.Add(company);
-
             }
         }
 

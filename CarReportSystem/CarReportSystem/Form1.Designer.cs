@@ -63,6 +63,8 @@ namespace CarReportSystem {
             this.cdColorDialog = new System.Windows.Forms.ColorDialog();
             this.carReportDBBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.carReportDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.infosys202226DataSet = new CarReportSystem.infosys202226DataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -75,9 +77,6 @@ namespace CarReportSystem {
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.carReportDBBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.carReportDBDataGridView = new System.Windows.Forms.DataGridView();
-            this.btConnect = new System.Windows.Forms.Button();
-            this.btNameSerch = new System.Windows.Forms.Button();
-            this.cbNameSerch = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,17 +84,18 @@ namespace CarReportSystem {
             this.carNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.carReportDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.infosys202226DataSet = new CarReportSystem.infosys202226DataSet();
+            this.btConnect = new System.Windows.Forms.Button();
+            this.btNameSerch = new System.Windows.Forms.Button();
+            this.cbNameSerch = new System.Windows.Forms.ComboBox();
             this.carReportDBTableAdapter = new CarReportSystem.infosys202226DataSetTableAdapters.CarReportDBTableAdapter();
             this.tableAdapterManager = new CarReportSystem.infosys202226DataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.pdPicture)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carReportDBBindingNavigator)).BeginInit();
             this.carReportDBBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carReportDBDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carReportDBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202226DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carReportDBDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // cbName
@@ -423,6 +423,16 @@ namespace CarReportSystem {
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "新規追加";
             // 
+            // carReportDBBindingSource
+            // 
+            this.carReportDBBindingSource.DataMember = "CarReportDB";
+            this.carReportDBBindingSource.DataSource = this.infosys202226DataSet;
+            // 
+            // infosys202226DataSet
+            // 
+            this.infosys202226DataSet.DataSetName = "infosys202226DataSet";
+            this.infosys202226DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -531,35 +541,6 @@ namespace CarReportSystem {
             this.carReportDBDataGridView.TabIndex = 29;
             this.carReportDBDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.carReportDBDataGridView_DataError);
             // 
-            // btConnect
-            // 
-            this.btConnect.Location = new System.Drawing.Point(4, 356);
-            this.btConnect.Name = "btConnect";
-            this.btConnect.Size = new System.Drawing.Size(78, 67);
-            this.btConnect.TabIndex = 1;
-            this.btConnect.Text = "DB接続";
-            this.btConnect.UseVisualStyleBackColor = true;
-            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
-            // 
-            // btNameSerch
-            // 
-            this.btNameSerch.Location = new System.Drawing.Point(195, 494);
-            this.btNameSerch.Name = "btNameSerch";
-            this.btNameSerch.Size = new System.Drawing.Size(69, 34);
-            this.btNameSerch.TabIndex = 1;
-            this.btNameSerch.Text = "名前検索";
-            this.btNameSerch.UseVisualStyleBackColor = true;
-            this.btNameSerch.Click += new System.EventHandler(this.btNameSerch_Click);
-            // 
-            // cbNameSerch
-            // 
-            this.cbNameSerch.FormattingEnabled = true;
-            this.cbNameSerch.Location = new System.Drawing.Point(279, 502);
-            this.cbNameSerch.MaximumSize = new System.Drawing.Size(274, 0);
-            this.cbNameSerch.Name = "cbNameSerch";
-            this.cbNameSerch.Size = new System.Drawing.Size(274, 20);
-            this.cbNameSerch.TabIndex = 0;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -604,15 +585,34 @@ namespace CarReportSystem {
             this.imageDataGridViewImageColumn.HeaderText = "Image";
             this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
             // 
-            // carReportDBBindingSource
+            // btConnect
             // 
-            this.carReportDBBindingSource.DataMember = "CarReportDB";
-            this.carReportDBBindingSource.DataSource = this.infosys202226DataSet;
+            this.btConnect.Location = new System.Drawing.Point(4, 356);
+            this.btConnect.Name = "btConnect";
+            this.btConnect.Size = new System.Drawing.Size(78, 67);
+            this.btConnect.TabIndex = 1;
+            this.btConnect.Text = "DB接続";
+            this.btConnect.UseVisualStyleBackColor = true;
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
             // 
-            // infosys202226DataSet
+            // btNameSerch
             // 
-            this.infosys202226DataSet.DataSetName = "infosys202226DataSet";
-            this.infosys202226DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btNameSerch.Location = new System.Drawing.Point(195, 494);
+            this.btNameSerch.Name = "btNameSerch";
+            this.btNameSerch.Size = new System.Drawing.Size(69, 34);
+            this.btNameSerch.TabIndex = 1;
+            this.btNameSerch.Text = "名前検索";
+            this.btNameSerch.UseVisualStyleBackColor = true;
+            this.btNameSerch.Click += new System.EventHandler(this.btNameSerch_Click);
+            // 
+            // cbNameSerch
+            // 
+            this.cbNameSerch.FormattingEnabled = true;
+            this.cbNameSerch.Location = new System.Drawing.Point(279, 502);
+            this.cbNameSerch.MaximumSize = new System.Drawing.Size(274, 0);
+            this.cbNameSerch.Name = "cbNameSerch";
+            this.cbNameSerch.Size = new System.Drawing.Size(274, 20);
+            this.cbNameSerch.TabIndex = 0;
             // 
             // carReportDBTableAdapter
             // 
@@ -670,9 +670,9 @@ namespace CarReportSystem {
             ((System.ComponentModel.ISupportInitialize)(this.carReportDBBindingNavigator)).EndInit();
             this.carReportDBBindingNavigator.ResumeLayout(false);
             this.carReportDBBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carReportDBDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carReportDBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.infosys202226DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carReportDBDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
