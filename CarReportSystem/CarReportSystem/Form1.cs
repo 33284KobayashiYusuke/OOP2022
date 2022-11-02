@@ -57,7 +57,7 @@ namespace CarReportSystem {
         }
 
         private void btAdd_Click(object sender, EventArgs e) {
-           
+            try {
                 DataRow newRow = infosys202226DataSet.CarReportDB.NewRow();
                 newRow[1] = dateTimePicker1.Text;
                 newRow[2] = cbName.Text;
@@ -68,7 +68,12 @@ namespace CarReportSystem {
                 //データセットへ新しいレコードを追加
                 infosys202226DataSet.CarReportDB.Rows.Add(newRow);
                 //データベース更新
-                this.carReportDBTableAdapter.Update(this.infosys202226DataSet.CarReportDB);            
+                this.carReportDBTableAdapter.Update(this.infosys202226DataSet.CarReportDB);
+            }
+            catch {
+
+            }
+
           //carReportDBDataGridView.Rows[carReportDBDataGridView.RowCount + 1].Selected = true;
             EnabledCheck();
         }
