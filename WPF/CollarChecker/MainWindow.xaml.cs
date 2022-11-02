@@ -20,6 +20,8 @@ namespace CollarChecker {
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window {
+        MyColor mycolor  
+
         public MainWindow() {
             InitializeComponent();
             DataContext = GetColorList(); //←追加
@@ -61,9 +63,9 @@ namespace CollarChecker {
             sl3.Value = mycolor.Color.B;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            ChangeCollar();
-            label1.Background.Clone();
+      
+        private void StockButton_Click(object sender, RoutedEventArgs e) {
+
         }
     }
 }

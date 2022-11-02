@@ -59,7 +59,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button Content="STOCK" Grid.Column="6" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="124" Height="30" Click="Button_Click"/>
+        <Button Content="STOCK" Grid.Column="6" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="124" Height="30" Click="StockButton_Click"/>
         <Label x:Name="label2" Background="Aqua" Grid.Column="6" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="185" Grid.RowSpan="5" Width="200"/>
 
     </Grid>
