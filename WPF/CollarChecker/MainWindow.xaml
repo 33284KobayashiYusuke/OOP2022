@@ -39,7 +39,7 @@
         <Slider  x:Name="sl2" Grid.Column="2"  Margin="12,10,23,10" Grid.Row="1" Grid.ColumnSpan="3" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="sl_ValueChanged"/>
         <Slider  x:Name="sl3" Grid.Column="2"  Margin="12,10,23,10" Grid.Row="2" Grid.ColumnSpan="3" Minimum="0" Maximum="255" IsSnapToTickEnabled="True" ValueChanged="sl_ValueChanged"/>
 
-        <Label x:Name="label1"  Grid.Row="0" Grid.Column="0" Background="Black" Grid.RowSpan="6" Margin="0,10,49,35" Grid.ColumnSpan="2"/>
+        <Label x:Name="label1"  Grid.Row="0" Grid.Column="0" Background="Black" Grid.RowSpan="6" Margin="5,20,44,25" Grid.ColumnSpan="2"/>
 
         <TextBox x:Name="Rtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15,10,0,0" Grid.Row="0" TextWrapping="Wrap" Text="{Binding ElementName=sl1, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
         <TextBox x:Name="Gtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding ElementName=sl2, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
@@ -49,7 +49,7 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Border Width="20" Height="Auto" Margin="5,0" BorderThickness="1" BorderBrush="Black" Loaded="Border_Loaded">
+                        <Border Width="20" Height="Auto" Margin="5,0" BorderThickness="1" BorderBrush="Black">
                             <Border.Background>
                                 <SolidColorBrush Color="{Binding Color}"/>
                             </Border.Background>
@@ -60,7 +60,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Button Content="STOCK" Grid.Column="6" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="124" Height="30" Click="StockButton_Click"/>
-        <Label x:Name="label2" Background="Aqua" Grid.Column="6" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="185" Grid.RowSpan="5" Width="200"/>
+        <Label x:Name="label2" Grid.Column="6" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="185" Grid.RowSpan="5" Width="200"/>
 
     </Grid>
 

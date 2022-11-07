@@ -20,17 +20,17 @@ namespace CollarChecker {
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window {
-        MyColor mycolor  
+        MyColor mycolor;
 
         public MainWindow() {
             InitializeComponent();
             DataContext = GetColorList(); //←追加
         }
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            ChangeCollar();
+            SetCollar();
         }
 
-        private void ChangeCollar() {
+        private void SetCollar() {
             byte rr = (byte)sl1.Value;
             byte gg = (byte)sl2.Value;
             byte bb = (byte)sl3.Value;
@@ -46,26 +46,29 @@ namespace CollarChecker {
         }
 
         private void sl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) {
-            ChangeCollar();
+            SetCollar();
         }
 
         public class MyColor {
             public Color Color { get; set; }
             public string Name { get; set; }
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            var mycolor = (MyColor)((ComboBox)sender).SelectedItem;
-            //var color = mycolor.Color;
-            //var name = mycolor.Name;
+            mycolor = (MyColor)((ComboBox)sender).SelectedItem;
+            //color = mycolor.Color;
+            //name = mycolor.Name;
+
             sl1.Value = mycolor.Color.R;
             sl2.Value = mycolor.Color.G;
             sl3.Value = mycolor.Color.B;
+            SetCollar();
         }
 
       
         private void StockButton_Click(object sender, RoutedEventArgs e) {
-
+          
         }
     }
 }
