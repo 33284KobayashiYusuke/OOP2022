@@ -21,7 +21,7 @@ namespace CollarChecker {
     /// </summary>
     public partial class MainWindow : Window {
         MyColor mycolor;
-        
+        List<MyColor> colorList = new List<MyColor>();
 
         public MainWindow() {
             InitializeComponent();
@@ -51,12 +51,6 @@ namespace CollarChecker {
             SetCollar();
         }
 
-        public class MyColor {
-            public Color Color { get; set; }
-            public string Name { get; set; }
-
-        }
-
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             mycolor = (MyColor)((ComboBox)sender).SelectedItem;
             //color = mycolor.Color;
@@ -68,9 +62,7 @@ namespace CollarChecker {
             SetCollar();
         }
 
-
         private void StockButton_Click(object sender, RoutedEventArgs e) {
-            var colorList = new List<MyColor>();
             StockList.Items.Add("R:" + Rtext.Text + "G:" + Gtext.Text + "B:" + Btext);
 
             MyColor stColor = new MyColor();
@@ -79,7 +71,24 @@ namespace CollarChecker {
             byte b = byte.Parse(Btext.Text);
 
             stColor.Color = Color.FromRgb(r, g, b);
-            colorList.Add(stColor);
+            var colorName = ((IEnumerable<MyColor>)DataContext)
+                                .Where(c => c.Color.R == stColor.Color.R &&
+                                            c.Color.G == stColor.Color.G &&
+                                            c.Color.B == stColor.Color.B).FirstOrDefault();
+
+            StockList.Items.Insert(0,colorName?.Name ?? "R:" + Rtext.Text + "G:" + Gtext.Text + "B:" + Btext);
+           
+            colorList.Insert(0,stColor);
+        }
+        private stockList_SelectionChanged(object sender,SelectionChangedEventArgs e) {
+            sl1.Value = colorList[StockList.SelectedIndex].Color.R;
+            sl2.Value = colorList[StockList.SelectedIndex].Color.G;
+            sl3.Value = colorList[StockList.SelectedIndex].Color.B;
+        }
+
+        public class MyColor {
+            public Color Color { get; set; }
+            public string Name { get; set; }
 
         }
     }
