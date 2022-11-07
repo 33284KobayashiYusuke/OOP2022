@@ -60,7 +60,9 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Button Content="STOCK" Grid.Column="6" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="124" Height="30" Click="StockButton_Click"/>
-        <Label x:Name="label2" Grid.Column="6" HorizontalAlignment="Left" Margin="20,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="185" Grid.RowSpan="5" Width="200"/>
+        <Label x:Name="label2" Grid.Column="6" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="206" Grid.RowSpan="6" Width="210">
+            <ListBox x:Name="StockList" Height="196" Width="200"/>
+        </Label>
 
     </Grid>
 

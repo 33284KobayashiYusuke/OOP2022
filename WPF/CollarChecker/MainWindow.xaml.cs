@@ -21,19 +21,21 @@ namespace CollarChecker {
     /// </summary>
     public partial class MainWindow : Window {
         MyColor mycolor;
+        
 
         public MainWindow() {
             InitializeComponent();
             DataContext = GetColorList(); //←追加
+            
         }
         private void Window_Loaded(object sender, RoutedEventArgs e) {
             SetCollar();
         }
 
         private void SetCollar() {
-            byte rr = (byte)sl1.Value;
-            byte gg = (byte)sl2.Value;
-            byte bb = (byte)sl3.Value;
+            var rr = (byte)sl1.Value;
+            var gg = (byte)sl2.Value;
+            var bb = (byte)sl3.Value;
 
             Color color = Color.FromRgb(rr, gg, bb);
             SolidColorBrush colorBrush = new SolidColorBrush(color);
@@ -66,9 +68,19 @@ namespace CollarChecker {
             SetCollar();
         }
 
-      
+
         private void StockButton_Click(object sender, RoutedEventArgs e) {
-          
+            var colorList = new List<MyColor>();
+            StockList.Items.Add("R:" + Rtext.Text + "G:" + Gtext.Text + "B:" + Btext);
+
+            MyColor stColor = new MyColor();
+            byte r = byte.Parse(Rtext.Text);
+            byte g = byte.Parse(Gtext.Text);
+            byte b = byte.Parse(Btext.Text);
+
+            stColor.Color = Color.FromRgb(r, g, b);
+            colorList.Add(stColor);
+
         }
     }
 }
