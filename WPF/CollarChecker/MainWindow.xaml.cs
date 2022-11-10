@@ -38,8 +38,7 @@ namespace CollarChecker {
             var bb = (byte)sl3.Value;
 
             Color color = Color.FromRgb(rr, gg, bb);
-            SolidColorBrush colorBrush = new SolidColorBrush(color);
-            label1.Background = colorBrush;
+            label1.Background = new SolidColorBrush(color);
         }
 
         private MyColor[] GetColorList() {
@@ -52,18 +51,14 @@ namespace CollarChecker {
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            mycolor = (MyColor)((ComboBox)sender).SelectedItem;
-            //color = mycolor.Color;
-            //name = mycolor.Name;
-
-            sl1.Value = mycolor.Color.R;
-            sl2.Value = mycolor.Color.G;
-            sl3.Value = mycolor.Color.B;
+            sl1.Value = ((MyColor)((ComboBox)sender).SelectedItem).Color.R;
+            sl2.Value = ((MyColor)((ComboBox)sender).SelectedItem).Color.G;
+            sl3.Value = ((MyColor)((ComboBox)sender).SelectedItem).Color.B;
             SetCollar();
         }
 
         private void StockButton_Click(object sender, RoutedEventArgs e) {
-            StockList.Items.Add("R:" + Rtext.Text + "G:" + Gtext.Text + "B:" + Btext);
+            StockList.Items.Add("R:" + Rtext.Text + "G:" + Gtext.Text + "B:" + Btext.Text);
 
             MyColor stColor = new MyColor();
             byte r = byte.Parse(Rtext.Text);
@@ -80,16 +75,21 @@ namespace CollarChecker {
            
             colorList.Insert(0,stColor);
         }
-        private stockList_SelectionChanged(object sender,SelectionChangedEventArgs e) {
+        private void stockList_SelectionChanged(object sender,SelectionChangedEventArgs e) {
             sl1.Value = colorList[StockList.SelectedIndex].Color.R;
             sl2.Value = colorList[StockList.SelectedIndex].Color.G;
             sl3.Value = colorList[StockList.SelectedIndex].Color.B;
+            SetCollar();
         }
 
         public class MyColor {
             public Color Color { get; set; }
             public string Name { get; set; }
 
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e) {
+            StockList.Items.Clear();
         }
     }
 }

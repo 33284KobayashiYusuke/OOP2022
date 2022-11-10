@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CollarChecker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="750" Loaded="Window_Loaded">
+        Title="MainWindow" Height="344" Width="788" Loaded="Window_Loaded">
 
-    <Grid HorizontalAlignment="Left" Width="750" Height="300" VerticalAlignment="Top">
+    <Grid HorizontalAlignment="Left" Width="769" Height="311" VerticalAlignment="Top">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="245"/>
@@ -45,7 +45,7 @@
         <TextBox x:Name="Gtext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="{Binding ElementName=sl2, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
         <TextBox x:Name="Btext" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=sl3, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="30"/>
 
-        <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="46,0,0,0" Height="24" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="4" >
+        <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="46,0,0,0" Height="24" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="4" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -61,8 +61,9 @@
         </ComboBox>
         <Button Content="STOCK" Grid.Column="6" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="124" Height="30" Click="StockButton_Click"/>
         <Label x:Name="label2" Grid.Column="6" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="206" Grid.RowSpan="6" Width="210">
-            <ListBox x:Name="StockList" Height="196" Width="200"/>
+            <ListBox x:Name="StockList" Height="196" Width="200" SelectionChanged="stockList_SelectionChanged"/>
         </Label>
+        <Button Content="DELETE" Grid.Column="6" HorizontalAlignment="Left" Margin="180,46,0,-24" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="deleteButton_Click" Height="24" RenderTransformOrigin="0.507,0.875" Grid.ColumnSpan="2"/>
 
     </Grid>
 
