@@ -76,6 +76,7 @@ namespace CollarChecker {
             colorList.Insert(0,stColor);
         }
         private void stockList_SelectionChanged(object sender,SelectionChangedEventArgs e) {
+            if (StockList.SelectedIndex == -1) return;
             sl1.Value = colorList[StockList.SelectedIndex].Color.R;
             sl2.Value = colorList[StockList.SelectedIndex].Color.G;
             sl3.Value = colorList[StockList.SelectedIndex].Color.B;
@@ -89,7 +90,13 @@ namespace CollarChecker {
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e) {
-            StockList.Items.Clear();
+            var dellIndex = StockList.SelectedIndex;
+
+            if (dellIndex == -1)
+                return;
+
+            StockList.Items.RemoveAt(dellIndex);
+            colorList.RemoveAt(dellIndex);
         }
     }
 }

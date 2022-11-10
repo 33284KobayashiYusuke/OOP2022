@@ -16,8 +16,8 @@
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="46*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="7*"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -63,7 +63,7 @@
         <Label x:Name="label2" Grid.Column="6" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="206" Grid.RowSpan="6" Width="210">
             <ListBox x:Name="StockList" Height="196" Width="200" SelectionChanged="stockList_SelectionChanged"/>
         </Label>
-        <Button Content="DELETE" Grid.Column="6" HorizontalAlignment="Left" Margin="180,46,0,-24" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="deleteButton_Click" Height="24" RenderTransformOrigin="0.507,0.875" Grid.ColumnSpan="2"/>
+        <Button Content="DELETE" Grid.Column="6" HorizontalAlignment="Left" Margin="180,46,0,-24" Grid.Row="5" VerticalAlignment="Top" Width="75" Click="deleteButton_Click" Height="24" RenderTransformOrigin="0.507,0.875"/>
 
     </Grid>
 
