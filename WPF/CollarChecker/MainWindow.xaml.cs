@@ -89,14 +89,11 @@ namespace CollarChecker {
 
         }
 
-        private void deleteButton_Click(object sender, RoutedEventArgs e) {
-            var dellIndex = StockList.SelectedIndex;
+        private void deleteButton_Click(object sender, RoutedEventArgs e) {         
+            if (StockList.SelectedIndex == -1) return;
 
-            if (dellIndex == -1)
-                return;
-
-            StockList.Items.RemoveAt(dellIndex);
-            colorList.RemoveAt(dellIndex);
+            StockList.Items.RemoveAt(StockList.SelectedIndex);
+            colorList.RemoveAt(StockList.SelectedIndex);
         }
     }
 }
