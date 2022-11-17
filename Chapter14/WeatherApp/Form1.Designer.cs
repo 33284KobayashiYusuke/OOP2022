@@ -33,6 +33,9 @@ namespace WeatherApp {
             this.label2 = new System.Windows.Forms.Label();
             this.btAreaSelection = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.btWeatherImageGet = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // tbWeatherInfo
@@ -98,7 +101,7 @@ namespace WeatherApp {
             // 
             // btAreaSelection
             // 
-            this.btAreaSelection.Location = new System.Drawing.Point(101, 292);
+            this.btAreaSelection.Location = new System.Drawing.Point(101, 309);
             this.btAreaSelection.Name = "btAreaSelection";
             this.btAreaSelection.Size = new System.Drawing.Size(96, 43);
             this.btAreaSelection.TabIndex = 1;
@@ -115,11 +118,31 @@ namespace WeatherApp {
             this.label3.TabIndex = 4;
             this.label3.Text = "選択した地域の天気";
             // 
+            // pbImage
+            // 
+            this.pbImage.Location = new System.Drawing.Point(833, 309);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(127, 134);
+            this.pbImage.TabIndex = 7;
+            this.pbImage.TabStop = false;
+            // 
+            // btWeatherImageGet
+            // 
+            this.btWeatherImageGet.Location = new System.Drawing.Point(860, 257);
+            this.btWeatherImageGet.Name = "btWeatherImageGet";
+            this.btWeatherImageGet.Size = new System.Drawing.Size(100, 37);
+            this.btWeatherImageGet.TabIndex = 8;
+            this.btWeatherImageGet.Text = "天気イメージ取得";
+            this.btWeatherImageGet.UseVisualStyleBackColor = true;
+            this.btWeatherImageGet.Click += new System.EventHandler(this.btWeatherImageGet_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 893);
+            this.ClientSize = new System.Drawing.Size(996, 707);
+            this.Controls.Add(this.btWeatherImageGet);
+            this.Controls.Add(this.pbImage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbAreaSelection);
             this.Controls.Add(this.label3);
@@ -131,6 +154,7 @@ namespace WeatherApp {
             this.Controls.Add(this.tbWeatherInfo);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +171,8 @@ namespace WeatherApp {
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btAreaSelection;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.Button btWeatherImageGet;
     }
 }
 
