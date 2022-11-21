@@ -27,6 +27,13 @@ namespace WeatherApp {
                 cbAreaSelection.Items.Add(line);
                 line = sr.ReadLine();
             }
+            var wc = new WebClient() {
+                Encoding = Encoding.UTF8
+            };
+            var dString = wc.DownloadString("https://www.jma.go.jp/bosai/forecast/data/overview_week/130000.json");
+            var json = JsonConvert.DeserializeObject<Class1>(dString);
+
+            tbToday.Text = json.reportDatetime.ToString();
 
         }
         private void btWeatherGet_Click(object sender, EventArgs e) {
@@ -356,7 +363,5 @@ namespace WeatherApp {
         }
 
        
-
-    
     }
 }
