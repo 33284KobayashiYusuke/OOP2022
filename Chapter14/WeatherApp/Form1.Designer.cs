@@ -28,7 +28,6 @@ namespace WeatherApp {
             this.btWeatherGet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbAreaInfo = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.cbAreaSelection = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btAreaSelection = new System.Windows.Forms.Button();
@@ -73,14 +72,6 @@ namespace WeatherApp {
             this.tbAreaInfo.Size = new System.Drawing.Size(624, 189);
             this.tbAreaInfo.TabIndex = 0;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(203, 467);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(624, 189);
-            this.textBox2.TabIndex = 0;
-            // 
             // cbAreaSelection
             // 
             this.cbAreaSelection.FormattingEnabled = true;
@@ -101,9 +92,9 @@ namespace WeatherApp {
             // 
             // btAreaSelection
             // 
-            this.btAreaSelection.Location = new System.Drawing.Point(101, 309);
+            this.btAreaSelection.Location = new System.Drawing.Point(7, 309);
             this.btAreaSelection.Name = "btAreaSelection";
-            this.btAreaSelection.Size = new System.Drawing.Size(96, 43);
+            this.btAreaSelection.Size = new System.Drawing.Size(190, 43);
             this.btAreaSelection.TabIndex = 1;
             this.btAreaSelection.Text = "取得";
             this.btAreaSelection.UseVisualStyleBackColor = true;
@@ -122,13 +113,13 @@ namespace WeatherApp {
             // 
             this.pbImage.Location = new System.Drawing.Point(833, 309);
             this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(127, 134);
+            this.pbImage.Size = new System.Drawing.Size(203, 134);
             this.pbImage.TabIndex = 7;
             this.pbImage.TabStop = false;
             // 
             // btWeatherImageGet
             // 
-            this.btWeatherImageGet.Location = new System.Drawing.Point(860, 257);
+            this.btWeatherImageGet.Location = new System.Drawing.Point(936, 249);
             this.btWeatherImageGet.Name = "btWeatherImageGet";
             this.btWeatherImageGet.Size = new System.Drawing.Size(100, 37);
             this.btWeatherImageGet.TabIndex = 8;
@@ -140,7 +131,8 @@ namespace WeatherApp {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 707);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(1120, 479);
             this.Controls.Add(this.btWeatherImageGet);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.label2);
@@ -149,11 +141,12 @@ namespace WeatherApp {
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btAreaSelection);
             this.Controls.Add(this.btWeatherGet);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.tbAreaInfo);
             this.Controls.Add(this.tbWeatherInfo);
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,7 +159,6 @@ namespace WeatherApp {
         private System.Windows.Forms.Button btWeatherGet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbAreaInfo;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox cbAreaSelection;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btAreaSelection;

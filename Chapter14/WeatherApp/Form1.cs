@@ -18,6 +18,17 @@ namespace WeatherApp {
         public Form1() {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e) {
+
+            StreamReader sr = new StreamReader(@"C:\Users\infosys\source\repos\OOP2022\Chapter14\WeatherApp\areacode.csv", System.Text.Encoding.GetEncoding("shift_jis"));
+            String line = sr.ReadLine();
+
+            while (!sr.EndOfStream) {
+                cbAreaSelection.Items.Add(line);
+                line = sr.ReadLine();
+            }
+
+        }
         private void btWeatherGet_Click(object sender, EventArgs e) {
 
             var wc = new WebClient() {
@@ -331,14 +342,6 @@ namespace WeatherApp {
 
         private void cbAreaSelection_Click(object sender, EventArgs e) {
 
-            StreamReader sr = new StreamReader(@"C:\Users\infosys\source\repos\OOP2022\Chapter14\WeatherApp\areacode.csv", System.Text.Encoding.GetEncoding("shift_jis"));
-            String line = sr.ReadLine();
-
-            while (!sr.EndOfStream) {
-                cbAreaSelection.Items.Add(line);
-                line = sr.ReadLine();
-            }
-
         }
 
         private void btWeatherImageGet_Click(object sender, EventArgs e) {
@@ -353,5 +356,7 @@ namespace WeatherApp {
         }
 
        
+
+    
     }
 }
