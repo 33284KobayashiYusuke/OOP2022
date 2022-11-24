@@ -106,7 +106,7 @@ namespace WeatherApp {
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 28);
             this.label3.TabIndex = 4;
-            this.label3.Text = "選択した地域の天気";
+            this.label3.Text = "選択地域の天気";
             // 
             // pbImage
             // 
@@ -164,9 +164,9 @@ namespace WeatherApp {
             // btWeatherGet
             // 
             this.btWeatherGet.BackColor = System.Drawing.Color.Azure;
-            this.btWeatherGet.Location = new System.Drawing.Point(64, 327);
+            this.btWeatherGet.Location = new System.Drawing.Point(7, 327);
             this.btWeatherGet.Name = "btWeatherGet";
-            this.btWeatherGet.Size = new System.Drawing.Size(99, 93);
+            this.btWeatherGet.Size = new System.Drawing.Size(188, 41);
             this.btWeatherGet.TabIndex = 1;
             this.btWeatherGet.Text = "取得";
             this.btWeatherGet.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@ namespace WeatherApp {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1057, 695);
+            this.ClientSize = new System.Drawing.Size(966, 695);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
