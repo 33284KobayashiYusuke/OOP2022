@@ -64,7 +64,7 @@ namespace CarReportSystem {
                 newRow[3] = GetRadioGroup();
                 newRow[4] = cbCarName.Text;
                 newRow[5] = tbReport.Text;
-                newRow[6] = pdPicture.Image;
+                newRow[6] = ImageToByteArray(pdPicture.Image);
                 //データセットへ新しいレコードを追加
                 infosys202226DataSet.CarReportDB.Rows.Add(newRow);
                 //データベース更新
@@ -89,7 +89,7 @@ namespace CarReportSystem {
             EnabledCheck();//マスク処理呼び出し
         }
         private void EnabledCheck() {
-            //btUpdate.Enabled = btDelete.Enabled = listPerson.Count() > 0 ? true : false;
+            btUpdate.Enabled = btDelete.Enabled = carReportDBDataGridView.Rows.Count > 0 ? true : false;
 
         }    
         private void btEnd_Click(object sender, EventArgs e) {
