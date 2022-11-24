@@ -74,7 +74,7 @@ namespace CarReportSystem {
 
             }
 
-          //carReportDBDataGridView.Rows[carReportDBDataGridView.RowCount + 1].Selected = true;
+            //carReportDBDataGridView.Rows[carReportDBDataGridView.RowCount + 1].Selected = true;
             EnabledCheck();
         }
 
@@ -91,7 +91,7 @@ namespace CarReportSystem {
             EnabledCheck();//マスク処理呼び出し
         }
         private void EnabledCheck() {
-           // btCorrect.Enabled = btDelete.Enabled = listPerson.Count() > 0 ? true : false;
+            //btCorrect.Enabled = btDelete.Enabled = listPerson.Count() > 0 ? true : false;
 
         }    
         private void btEnd_Click(object sender, EventArgs e) {
