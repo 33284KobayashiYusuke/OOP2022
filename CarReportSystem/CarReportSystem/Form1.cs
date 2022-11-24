@@ -180,8 +180,6 @@ namespace CarReportSystem {
             tbReport.Text = (string)carReportDBDataGridView.CurrentRow.Cells[5].Value;
           //pdPicture.Image = ByteArrayToImage(carReportDBDataGridView.CurrentRow.Cells[6]);
         }
-
-       
     }
 }
 
