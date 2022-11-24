@@ -101,7 +101,7 @@ namespace CarReportSystem {
             // cbName
             // 
             this.cbName.FormattingEnabled = true;
-            this.cbName.Location = new System.Drawing.Point(88, 73);
+            this.cbName.Location = new System.Drawing.Point(88, 77);
             this.cbName.Name = "cbName";
             this.cbName.Size = new System.Drawing.Size(274, 20);
             this.cbName.TabIndex = 0;
@@ -539,6 +539,7 @@ namespace CarReportSystem {
             this.carReportDBDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.carReportDBDataGridView.Size = new System.Drawing.Size(746, 164);
             this.carReportDBDataGridView.TabIndex = 29;
+            this.carReportDBDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.carReportDBDataGridView_CellContentClick);
             this.carReportDBDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.carReportDBDataGridView_DataError);
             // 
             // idDataGridViewTextBoxColumn

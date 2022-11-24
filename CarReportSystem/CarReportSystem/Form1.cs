@@ -170,6 +170,18 @@ namespace CarReportSystem {
         private void carReportDBDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e) {
 
         }
+
+        //グリッドビュー行選択時に反映させる
+        private void carReportDBDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+          //dateTimePicker1.Text.ToString() = carReportDBDataGridView.CurrentRow.Cells[1].Value;
+            cbName.Text = (string)carReportDBDataGridView.CurrentRow.Cells[2].Value;
+          //carReportDBDataGridView.CurrentRow.Cells[3].Value = GetRadioGroup();
+            cbCarName.Text = (string)carReportDBDataGridView.CurrentRow.Cells[4].Value;
+            tbReport.Text = (string)carReportDBDataGridView.CurrentRow.Cells[5].Value;
+          //pdPicture.Image = (Image)carReportDBDataGridView.CurrentRow.Cells[6].Value;
+        }
+
+       
     }
 }
 
