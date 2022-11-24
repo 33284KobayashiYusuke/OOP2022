@@ -362,6 +362,14 @@ namespace WeatherApp {
             pbImage.ImageLocation = "https://www.jma.go.jp/bosai/forecast/img/112.png";
         }
 
-       
+        private void button1_Click(object sender, EventArgs e) {
+            var wc = new WebClient() {
+                Encoding = Encoding.UTF8
+            };
+            var dString = wc.DownloadString("https://www.jma.go.jp/bosai/forecast/data/overview_week/100000.json");
+            var json = JsonConvert.DeserializeObject<Class1>(dString);
+
+            tbToday.Text = json.reportDatetime.ToString();
+        }
     }
 }

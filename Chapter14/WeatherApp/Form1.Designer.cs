@@ -40,6 +40,7 @@ namespace WeatherApp {
             this.btWeatherGet = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@ namespace WeatherApp {
             // tbAreaInfo
             // 
             this.tbAreaInfo.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbAreaInfo.Location = new System.Drawing.Point(205, 38);
+            this.tbAreaInfo.Location = new System.Drawing.Point(207, 38);
             this.tbAreaInfo.Multiline = true;
             this.tbAreaInfo.Name = "tbAreaInfo";
             this.tbAreaInfo.Size = new System.Drawing.Size(726, 191);
@@ -73,7 +74,7 @@ namespace WeatherApp {
             // cbAreaSelection
             // 
             this.cbAreaSelection.FormattingEnabled = true;
-            this.cbAreaSelection.Location = new System.Drawing.Point(7, 38);
+            this.cbAreaSelection.Location = new System.Drawing.Point(5, 79);
             this.cbAreaSelection.Name = "cbAreaSelection";
             this.cbAreaSelection.Size = new System.Drawing.Size(190, 20);
             this.cbAreaSelection.TabIndex = 5;
@@ -82,7 +83,7 @@ namespace WeatherApp {
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 15F);
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Location = new System.Drawing.Point(3, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 26);
             this.label2.TabIndex = 6;
@@ -91,7 +92,7 @@ namespace WeatherApp {
             // btAreaSelection
             // 
             this.btAreaSelection.BackColor = System.Drawing.Color.Azure;
-            this.btAreaSelection.Location = new System.Drawing.Point(9, 64);
+            this.btAreaSelection.Location = new System.Drawing.Point(5, 105);
             this.btAreaSelection.Name = "btAreaSelection";
             this.btAreaSelection.Size = new System.Drawing.Size(190, 43);
             this.btAreaSelection.TabIndex = 1;
@@ -102,15 +103,15 @@ namespace WeatherApp {
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20F);
-            this.label3.Location = new System.Drawing.Point(231, 9);
+            this.label3.Location = new System.Drawing.Point(202, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 28);
             this.label3.TabIndex = 4;
-            this.label3.Text = "選択地域の天気";
+            this.label3.Text = "天気";
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(9, 113);
+            this.pbImage.Location = new System.Drawing.Point(816, 116);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(101, 98);
             this.pbImage.TabIndex = 7;
@@ -119,7 +120,7 @@ namespace WeatherApp {
             // btWeatherImageGet
             // 
             this.btWeatherImageGet.BackColor = System.Drawing.Color.Azure;
-            this.btWeatherImageGet.Location = new System.Drawing.Point(7, 217);
+            this.btWeatherImageGet.Location = new System.Drawing.Point(101, 192);
             this.btWeatherImageGet.Name = "btWeatherImageGet";
             this.btWeatherImageGet.Size = new System.Drawing.Size(100, 37);
             this.btWeatherImageGet.TabIndex = 8;
@@ -129,7 +130,7 @@ namespace WeatherApp {
             // 
             // tbToday
             // 
-            this.tbToday.Location = new System.Drawing.Point(7, 643);
+            this.tbToday.Location = new System.Drawing.Point(64, 0);
             this.tbToday.Multiline = true;
             this.tbToday.Name = "tbToday";
             this.tbToday.Size = new System.Drawing.Size(125, 21);
@@ -175,7 +176,7 @@ namespace WeatherApp {
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 625);
+            this.label6.Location = new System.Drawing.Point(5, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 10;
@@ -189,12 +190,23 @@ namespace WeatherApp {
             this.textBox1.Size = new System.Drawing.Size(293, 157);
             this.textBox1.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(89, 480);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(966, 695);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -239,6 +251,7 @@ namespace WeatherApp {
         private System.Windows.Forms.Button btWeatherGet;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
