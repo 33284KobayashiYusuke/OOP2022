@@ -34,13 +34,8 @@ namespace WeatherApp {
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.btWeatherImageGet = new System.Windows.Forms.Button();
             this.tbToday = new System.Windows.Forms.TextBox();
-            this.tbWether2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btWeatherGet = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,32 +131,6 @@ namespace WeatherApp {
             this.tbToday.Size = new System.Drawing.Size(125, 21);
             this.tbToday.TabIndex = 9;
             // 
-            // tbWether2
-            // 
-            this.tbWether2.Location = new System.Drawing.Point(640, 480);
-            this.tbWether2.Multiline = true;
-            this.tbWether2.Name = "tbWether2";
-            this.tbWether2.Size = new System.Drawing.Size(293, 157);
-            this.tbWether2.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(205, 456);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 12);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "明日の天気";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(638, 456);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 12);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "明後日の天気";
-            // 
             // btWeatherGet
             // 
             this.btWeatherGet.BackColor = System.Drawing.Color.Azure;
@@ -182,36 +151,13 @@ namespace WeatherApp {
             this.label6.TabIndex = 10;
             this.label6.Text = "更新日時";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(201, 480);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 157);
-            this.textBox1.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(89, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(966, 695);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(966, 437);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.tbWether2);
             this.Controls.Add(this.tbToday);
             this.Controls.Add(this.btWeatherImageGet);
             this.Controls.Add(this.pbImage);
@@ -245,13 +191,8 @@ namespace WeatherApp {
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Button btWeatherImageGet;
         private System.Windows.Forms.TextBox tbToday;
-        private System.Windows.Forms.TextBox tbWether2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btWeatherGet;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
