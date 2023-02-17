@@ -60,7 +60,7 @@ namespace WeatherApp {
             // tbAreaInfo
             // 
             this.tbAreaInfo.BackColor = System.Drawing.Color.AliceBlue;
-            this.tbAreaInfo.Location = new System.Drawing.Point(207, 38);
+            this.tbAreaInfo.Location = new System.Drawing.Point(201, 38);
             this.tbAreaInfo.Multiline = true;
             this.tbAreaInfo.Name = "tbAreaInfo";
             this.tbAreaInfo.Size = new System.Drawing.Size(726, 191);
